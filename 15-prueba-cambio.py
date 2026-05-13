@@ -1,25 +1,84 @@
+#La idea de esto es ir viendo la evolucion del codigo a corde lo aprendido.
+#VERSION V3
+
 Monedas = ["Euros", "Reales", "Dolares"]
-print("Divisas disponibles:")
-for i in Monedas:
-    print("-", i)
-Dinero, Divisa = input("Ingrese importe en Ars y tipo de cambio: ").split()
-Dolar, Euro, Real = 1399, 1642, 285
 
-din1 = float(Dinero)
-operador = Divisa
+while True:
 
-if operador == "Dolares":
-    resultado = (din1 / Dolar)
-    print("Su cambio es: $", round(resultado))
-elif operador == "Euros":
-    resultado = (din1 / Euro)
-    print("Su cambio es: $", round(resultado))
-elif operador == "Reales":
-    resultado = (din1 / Real)
-    print("Su cacambio es:: $", round(resultado))
+    print("Divisas disponibles:")
+    for i in Monedas:
+        print("-", i)
+    datos = input("Ingrese importe en Ars y tipo de cambio: ").split()
+    if len(datos) < 2:
+        print("Ingrese tipo de cambio.")
+        continue
 
-else:
-    print("Divisa no disponible")
+#Editable: Cotizaciones 
+    Dinero, Divisa = datos
+    Dolar, Euro, Real = 1399, 1642, 285
+
+    din1 = float(Dinero)
+
+    if Divisa == "Dolares" or Divisa == "dolares":
+        resultado = (din1 / Dolar)
+        print("Su cambio es: $", round(resultado, 2))
+    elif Divisa == "Euros" or Divisa == "euros":
+        resultado = (din1 / Euro)
+        print("Su cambio es: $", round(resultado, 2))
+    elif Divisa == "Reales" or Divisa == "reales":
+        resultado = (din1 / Real)
+        print("Su cacambio es:: $", round(resultado, 2))
+    else:
+        print("Divisa no disponible")
+
+    Reinicio = input("Desea realizar otra operacion?: (si/no) ")
+    if Reinicio == "no" or Reinicio == "No":
+        print("Gracias por utilizarnos.")
+        print("Programa finalizado.")
+        break
+    elif Reinicio == "si" or Reinicio == "Si":
+        continue
+
+
+
+# VERSION V2
+
+# Monedas = ["Euros", "Reales", "Dolares"]
+
+# while True:
+
+#     print("Divisas disponibles:")
+#     for i in Monedas:
+#         print("-", i)
+#     Dinero, Divisa = input("Ingrese importe en Ars y tipo de cambio: ").split()
+#     Dolar, Euro, Real = 1399, 1642, 285
+#     datos = Dinero, Divisa
+
+#     din1 = float(Dinero)
+
+#     if Divisa == "Dolares":
+#         resultado = (din1 / Dolar)
+#         print("Su cambio es: $", round(resultado))
+#     elif Divisa == "Euros":
+#         resultado = (din1 / Euro)
+#         print("Su cambio es: $", round(resultado))
+#     elif Divisa == "Reales":
+#         resultado = (din1 / Real)
+#         print("Su cacambio es:: $", round(resultado))
+#     else:
+#         print("Divisa no disponible")
+
+#     Reinicio = input("Desea realizar otra operacion?: (si/no) ")
+#     if Reinicio == "no":
+#         print("Programa finalizado")
+#         break
+#     elif Reinicio == "si":
+#         continue
+
+
+
+
+#VERSION V1
 
 # Dinero = int(input("Cantidad a cambiar:$"))
 # Monedas = ["euro", "real", "dolar"]
