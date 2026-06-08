@@ -1,4 +1,3 @@
-#La idea de esto es ir viendo la evolucion del codigo a corde lo aprendido.
 #VERSION V3
 
 Monedas = ["Euros", "Reales", "Dolares"]
